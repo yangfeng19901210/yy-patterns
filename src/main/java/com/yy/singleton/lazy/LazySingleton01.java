@@ -12,6 +12,9 @@ public class LazySingleton01 {
 	private static LazySingleton01 instance;
 	
 	private LazySingleton01(){ //私有化构造器
+		if(null!=instance){
+			throw new RuntimeException("私有化构造器禁止实例化");
+		}
 	}
 	
 	//方法同步，调用效率低！
