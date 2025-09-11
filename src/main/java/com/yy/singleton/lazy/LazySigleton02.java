@@ -26,11 +26,6 @@ public class LazySigleton02 {
      */
     public synchronized static LazySigleton02 getInstance(){
         if(null == INSTANCE){
-            try {
-                Thread.sleep(100);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
             INSTANCE = new LazySigleton02();
         }
         return INSTANCE;
